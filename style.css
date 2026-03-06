@@ -117,6 +117,13 @@ body::before {
   opacity: 0.95;
 }
 
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 3px;
+}
+
 .hero {
   max-width: 1140px;
   margin: 0 auto;
