@@ -1,0 +1,15 @@
+﻿{
+  "name": "GWP MEDIA",
+  "short_name": "GWP MEDIA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#184b44",
+  "icons": [
+    {
+      "src": "./GWP-MEDIA.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
