@@ -198,37 +198,94 @@ footer {
   position: relative;
   min-height: 360px;
   overflow: hidden;
-  background: linear-gradient(160deg, #173d36 0%, #285a52 52%, #2f6c62 100%);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(253, 233, 187, 0.22) 0%, transparent 28%),
+    radial-gradient(circle at 90% 90%, rgba(172, 245, 231, 0.2) 0%, transparent 34%),
+    linear-gradient(162deg, #112e29 0%, #1e4a43 48%, #2d6b61 100%);
+}
+
+.hero-graphic::before,
+.hero-graphic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-graphic::before {
+  background: linear-gradient(112deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 67%);
+  transform: translateX(-130%);
+  animation: lightSweep 9s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.hero-graphic::after {
+  background:
+    radial-gradient(circle at center, transparent 0 58%, rgba(255, 255, 255, 0.18) 58.5%, transparent 60.5%),
+    radial-gradient(circle at center, transparent 0 68%, rgba(255, 255, 255, 0.08) 68.5%, transparent 70%);
+  opacity: 0.35;
+}
+
+.graphic-grid,
+.graphic-beam,
+.graphic-orbit {
+  position: absolute;
+  pointer-events: none;
+}
+
+.graphic-grid {
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 22%, transparent 78%);
+  opacity: 0.22;
+}
+
+.graphic-beam {
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: -110px;
+  border-radius: 50%;
+  background: conic-gradient(from 90deg, transparent 0 35%, rgba(245, 218, 168, 0.75) 44%, transparent 54%);
+  filter: blur(10px);
+  opacity: 0.72;
+  animation: beamRotate 20s linear infinite;
 }
 
 .graphic-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(8px);
+  filter: blur(14px);
+  z-index: 1;
 }
 
 .graphic-glow-a {
-  width: 240px;
-  height: 240px;
-  top: -40px;
-  right: -60px;
-  background: rgba(255, 219, 156, 0.45);
-  animation: driftSlow 11s ease-in-out infinite;
+  width: 280px;
+  height: 280px;
+  top: -70px;
+  right: -70px;
+  background: rgba(255, 212, 135, 0.48);
+  animation: driftSlow 10s ease-in-out infinite;
 }
 
 .graphic-glow-b {
-  width: 220px;
-  height: 220px;
-  bottom: -80px;
-  left: -70px;
-  background: rgba(188, 255, 241, 0.35);
-  animation: driftSlow 13s ease-in-out infinite reverse;
+  width: 250px;
+  height: 250px;
+  bottom: -90px;
+  left: -85px;
+  background: rgba(176, 255, 236, 0.33);
+  animation: driftSlow 12s ease-in-out infinite reverse;
 }
 
 .graphic-circle {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  z-index: 2;
 }
 
 .graphic-circle-a {
@@ -236,15 +293,27 @@ footer {
   height: 280px;
   right: -90px;
   top: 60px;
-  animation: spinPulse 24s linear infinite;
+  animation: spinPulse 20s linear infinite;
 }
 
 .graphic-circle-b {
-  width: 150px;
-  height: 150px;
-  left: 28px;
+  width: 170px;
+  height: 170px;
+  left: 26px;
+  top: 22px;
+  animation: spinPulse 15s linear infinite reverse;
+}
+
+.graphic-orbit {
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  right: 40px;
   top: 26px;
-  animation: spinPulse 18s linear infinite reverse;
+  opacity: 0.88;
+  z-index: 2;
+  animation: spinPulse 26s linear infinite reverse;
 }
 
 .graphic-card {
@@ -257,9 +326,10 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.42);
   background: rgba(255, 255, 255, 0.15);
   color: #f8f7f2;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
   box-shadow: var(--shadow-deep);
-  animation: floatCard 6s ease-in-out infinite;
+  z-index: 4;
+  animation: floatCard 7s ease-in-out infinite;
 }
 
 .graphic-card p {
@@ -477,6 +547,34 @@ footer p {
   }
 }
 
+@keyframes lightSweep {
+  0%,
+  12% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(130%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
+}
+
+@keyframes beamRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes spinPulse {
   0% {
     transform: rotate(0deg) scale(1);
@@ -520,6 +618,17 @@ footer p {
 
   .hero-graphic {
     min-height: 280px;
+  }
+
+  .graphic-grid {
+    opacity: 0.16;
+  }
+
+  .graphic-orbit {
+    right: 20px;
+    top: 16px;
+    width: 180px;
+    height: 180px;
   }
 
   .cards {
