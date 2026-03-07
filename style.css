@@ -682,9 +682,9 @@ footer {
 .project-card {
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--surface);
-  padding: 1rem;
-  box-shadow: var(--shadow-soft);
+  background: #fcfbf8;
+  padding: 1.1rem;
+  box-shadow: 0 10px 22px rgba(20, 18, 16, 0.07);
 }
 
 .project-toolbar {
@@ -719,58 +719,69 @@ footer {
 .poster-grid {
   margin-top: 0.9rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 0.7rem;
-  max-width: 920px;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 0.9rem;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
+  justify-items: center;
 }
 
 .poster-item {
   position: relative;
   margin: 0;
   width: 100%;
-  max-width: 165px;
+  max-width: 188px;
   margin-inline: auto;
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  border: 1px solid #d4cdc0;
+  border-radius: 10px;
   overflow: hidden;
-  background: #fff;
-  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(20, 18, 16, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.poster-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  pointer-events: none;
+}
+
 .poster-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 30px rgba(20, 18, 16, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(20, 18, 16, 0.12);
 }
 
 .poster-item img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  background: #ece8de;
+  background: #f0ece4;
 }
 
 .poster-badge {
   position: absolute;
-  left: 7px;
-  top: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  right: 8px;
+  top: 8px;
+  border: 1px solid #cec4b3;
   border-radius: 999px;
-  background: rgba(18, 18, 18, 0.45);
-  color: #f7f5f1;
-  font-size: 0.64rem;
+  background: rgba(252, 248, 238, 0.92);
+  color: #4b4741;
+  font-size: 0.61rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.22rem 0.45rem;
+  padding: 0.2rem 0.44rem;
 }
 
 .poster-item figcaption {
-  padding: 0.45rem 0.55rem;
-  font-size: 0.76rem;
-  text-align: center;
-  color: #5b5854;
+  padding: 0.5rem 0.58rem;
+  font-size: 0.74rem;
+  text-align: left;
+  color: #4f4b45;
+  font-weight: 600;
+  border-top: 1px solid #e3dbcd;
 }
 
 .lightbox {
