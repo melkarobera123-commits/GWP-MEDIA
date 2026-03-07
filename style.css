@@ -682,9 +682,11 @@ footer {
 .project-card {
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: #fcfbf8;
-  padding: 1.1rem;
-  box-shadow: 0 10px 22px rgba(20, 18, 16, 0.07);
+  background:
+    linear-gradient(#fcfbf8, #fcfbf8) padding-box,
+    linear-gradient(135deg, #e8dfcf 0%, #f5f1e7 45%, #d8cec0 100%) border-box;
+  padding: 1.2rem;
+  box-shadow: 0 12px 26px rgba(20, 18, 16, 0.08);
 }
 
 .project-toolbar {
@@ -697,8 +699,11 @@ footer {
 
 .project-toolbar p {
   margin: 0;
-  color: #4d4b48;
+  color: #3f3c37;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
 }
 
 .project-chips {
@@ -708,20 +713,22 @@ footer {
 }
 
 .project-chip {
-  border: 1px solid #cfc5b6;
+  border: 1px solid #d3c8b8;
   border-radius: 999px;
-  padding: 0.28rem 0.6rem;
-  font-size: 0.73rem;
-  color: #4f4c48;
-  background: #faf6ef;
+  padding: 0.25rem 0.58rem;
+  font-size: 0.69rem;
+  color: #545049;
+  background: #f7f2e9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .poster-grid {
   margin-top: 0.9rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-  gap: 0.9rem;
-  max-width: 980px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   justify-items: center;
@@ -731,13 +738,13 @@ footer {
   position: relative;
   margin: 0;
   width: 100%;
-  max-width: 188px;
+  max-width: 195px;
   margin-inline: auto;
-  border: 1px solid #d4cdc0;
-  border-radius: 10px;
+  border: 1px solid #cec4b4;
+  border-radius: 9px;
   overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 8px 18px rgba(20, 18, 16, 0.08);
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(20, 18, 16, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -745,43 +752,51 @@ footer {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   pointer-events: none;
 }
 
 .poster-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 24px rgba(20, 18, 16, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(20, 18, 16, 0.12);
 }
 
 .poster-item img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  background: #f0ece4;
+  background: #eee8dc;
+  filter: saturate(96%) contrast(101%);
+  transition: transform 0.32s ease;
+}
+
+.poster-item:hover img {
+  transform: scale(1.015);
 }
 
 .poster-badge {
   position: absolute;
   right: 8px;
   top: 8px;
-  border: 1px solid #cec4b3;
+  border: 1px solid #d7cebe;
   border-radius: 999px;
-  background: rgba(252, 248, 238, 0.92);
-  color: #4b4741;
-  font-size: 0.61rem;
-  letter-spacing: 0.05em;
+  background: rgba(255, 252, 246, 0.95);
+  color: #555048;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.2rem 0.44rem;
+  padding: 0.19rem 0.42rem;
 }
 
 .poster-item figcaption {
-  padding: 0.5rem 0.58rem;
-  font-size: 0.74rem;
-  text-align: left;
-  color: #4f4b45;
+  padding: 0.52rem 0.6rem;
+  font-size: 0.72rem;
+  text-align: center;
+  color: #4d4942;
   font-weight: 600;
-  border-top: 1px solid #e3dbcd;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-top: 1px solid #dfd6c8;
 }
 
 .lightbox {
