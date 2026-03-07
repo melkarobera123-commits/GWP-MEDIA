@@ -546,12 +546,18 @@ footer {
 .poster-grid {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.7rem;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .poster-item {
   margin: 0;
+  width: 100%;
+  max-width: 165px;
+  margin-inline: auto;
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -567,14 +573,15 @@ footer {
 
 .poster-item img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   background: #ece8de;
 }
 
 .poster-item figcaption {
-  padding: 0.55rem 0.7rem;
-  font-size: 0.84rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.76rem;
+  text-align: center;
   color: #5b5854;
 }
 
@@ -911,6 +918,7 @@ footer p {
   }
 
   .poster-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
   }
 }
