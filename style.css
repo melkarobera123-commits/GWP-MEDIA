@@ -676,7 +676,7 @@ footer {
 }
 
 .projects-section {
-  padding-top: 1.6rem;
+  padding-top: 0.6rem;
 }
 
 .project-card {
@@ -685,7 +685,7 @@ footer {
   background:
     linear-gradient(#fcfbf8, #fcfbf8) padding-box,
     linear-gradient(135deg, #e8dfcf 0%, #f5f1e7 45%, #d8cec0 100%) border-box;
-  padding: 1.2rem;
+  padding: 0.95rem;
   box-shadow: 0 12px 26px rgba(20, 18, 16, 0.08);
 }
 
@@ -724,11 +724,11 @@ footer {
 }
 
 .poster-grid {
-  margin-top: 0.9rem;
+  margin-top: 0.2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 0.75rem;
+  max-width: 860px;
   margin-left: auto;
   margin-right: auto;
   justify-items: center;
@@ -738,7 +738,7 @@ footer {
   position: relative;
   margin: 0;
   width: 100%;
-  max-width: 195px;
+  max-width: 160px;
   margin-inline: auto;
   border: 1px solid #cec4b4;
   border-radius: 9px;
@@ -774,23 +774,9 @@ footer {
   transform: scale(1.015);
 }
 
-.poster-badge {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  border: 1px solid #d7cebe;
-  border-radius: 999px;
-  background: rgba(255, 252, 246, 0.95);
-  color: #555048;
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.19rem 0.42rem;
-}
-
 .poster-item figcaption {
-  padding: 0.52rem 0.6rem;
-  font-size: 0.72rem;
+  padding: 0.42rem 0.5rem;
+  font-size: 0.68rem;
   text-align: center;
   color: #4d4942;
   font-weight: 600;
