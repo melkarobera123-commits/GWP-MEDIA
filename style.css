@@ -38,6 +38,27 @@ body {
     var(--bg);
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  color: #fff;
+  background: #1f564e;
+  z-index: 2000;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -446,6 +467,34 @@ footer {
 
 .section {
   padding: 3.4rem 0;
+}
+
+.credibility-strip {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cred-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.92) 0%, rgba(252, 246, 236, 0.92) 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.cred-item h2 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.02rem;
+}
+
+.cred-item p {
+  margin: 0.45rem 0 0;
+  color: #4f4a43;
+  font-size: 0.92rem;
 }
 
 .section-head {
@@ -1258,6 +1307,49 @@ footer p {
   margin: 0;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer-brand {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.footer-copy {
+  color: #5d5549;
+}
+
+.footer-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6c6457;
+  font-weight: 700;
+}
+
+.footer-links {
+  margin-top: 0.28rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem 0.55rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #37453f;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: #204d46;
+  text-decoration: underline;
+}
+
 @keyframes driftSlow {
   0%,
   100% {
@@ -1363,6 +1455,10 @@ footer p {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .credibility-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1427,6 +1523,11 @@ footer p {
 
   .related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 
