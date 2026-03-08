@@ -179,6 +179,83 @@ footer {
   flex-wrap: wrap;
 }
 
+.social-links-wrap {
+  margin-top: 1rem;
+}
+
+.social-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5d5348;
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  border: 1px solid #d8ccb8;
+  border-radius: 999px;
+  padding: 0.46rem 0.78rem;
+  color: #2f2a24;
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.82), rgba(250, 243, 231, 0.9));
+  box-shadow: 0 6px 15px rgba(25, 21, 16, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: currentColor;
+}
+
+.social-link span {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: #bea374;
+  box-shadow: 0 10px 20px rgba(25, 21, 16, 0.12);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid #1f564e;
+  outline-offset: 2px;
+}
+
+.social-telegram {
+  color: #1d6f93;
+}
+
+.social-youtube {
+  color: #a02323;
+}
+
+.social-facebook {
+  color: #234f9b;
+}
+
+.social-instagram {
+  color: #9b2f5a;
+}
+
+.social-tiktok {
+  color: #252525;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -1296,6 +1373,14 @@ footer p {
 
   .hero-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    gap: 0.45rem;
+  }
+
+  .social-link {
+    padding: 0.42rem 0.68rem;
   }
 
   .cards {
