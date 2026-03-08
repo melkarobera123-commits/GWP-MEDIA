@@ -1,12 +1,14 @@
 ﻿:root {
-  --bg: #f6f4ef;
-  --surface: #fffdfa;
-  --text: #1f1e1c;
-  --muted: #585754;
-  --line: #d8d2c7;
-  --primary: #184b44;
-  --primary-soft: #e2f0ec;
-  --gold: #c9a252;
+  --bg: #f3eee2;
+  --surface: #fffcf5;
+  --text: #1f1b17;
+  --muted: #60574b;
+  --line: #d8cdb9;
+  --primary: #2f5f46;
+  --primary-soft: #e6f0e8;
+  --gold: #d5ab3b;
+  --accent-red: #8f2f2f;
+  --accent-earth: #8f6845;
   --shadow-soft: 0 10px 26px rgba(20, 18, 16, 0.08);
   --shadow-deep: 0 20px 52px rgba(20, 18, 16, 0.14);
 }
@@ -26,8 +28,13 @@ body {
   color: var(--text);
   line-height: 1.6;
   background:
-    radial-gradient(circle at 8% 10%, #ece8de 0%, transparent 38%),
-    radial-gradient(circle at 90% 0%, #e3ece9 0%, transparent 28%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(143, 104, 69, 0.04) 0 10px,
+      rgba(255, 255, 255, 0) 10px 20px
+    ),
+    radial-gradient(circle at 8% 10%, #ebe2cf 0%, transparent 40%),
+    radial-gradient(circle at 90% 0%, #e3ecd9 0%, transparent 30%),
     var(--bg);
 }
 
@@ -109,7 +116,9 @@ footer {
   border: 1px solid var(--line);
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(125deg, #fefcf8 0%, #f4eee4 56%, #f7f4ed 100%);
+  background:
+    linear-gradient(135deg, rgba(213, 171, 59, 0.12) 0%, transparent 40%),
+    linear-gradient(126deg, #fffcf5 0%, #f1e7d7 54%, #ecefdf 100%);
   box-shadow: var(--shadow-soft);
 }
 
@@ -146,8 +155,8 @@ footer {
 }
 
 .metric {
-  background: #fffcf6;
-  border: 1px solid #e7dfd1;
+  background: #fffaf0;
+  border: 1px solid #e1d5c0;
   border-radius: 12px;
   padding: 0.75rem;
 }
@@ -174,7 +183,7 @@ footer {
   display: inline-block;
   text-decoration: none;
   border: 1px solid transparent;
-  background: var(--primary);
+  background: linear-gradient(140deg, var(--primary) 0%, #3c7458 100%);
   color: #fff;
   border-radius: 999px;
   padding: 0.64rem 1rem;
@@ -185,7 +194,7 @@ footer {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(24, 75, 68, 0.2);
+  box-shadow: 0 10px 20px rgba(47, 95, 70, 0.24);
 }
 
 .btn-outline {
@@ -200,9 +209,14 @@ footer {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 16% 18%, rgba(253, 233, 187, 0.22) 0%, transparent 28%),
-    radial-gradient(circle at 90% 90%, rgba(172, 245, 231, 0.2) 0%, transparent 34%),
-    linear-gradient(162deg, #112e29 0%, #1e4a43 48%, #2d6b61 100%);
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.06) 0 14px,
+      rgba(255, 255, 255, 0) 14px 28px
+    ),
+    radial-gradient(circle at 14% 20%, rgba(255, 224, 150, 0.3) 0%, transparent 28%),
+    radial-gradient(circle at 90% 82%, rgba(157, 204, 170, 0.28) 0%, transparent 34%),
+    linear-gradient(160deg, #1f3f2c 0%, #3f2f20 45%, #214f3a 100%);
 }
 
 .hero-graphic::before,
@@ -450,7 +464,7 @@ footer {
   bottom: 18px;
   width: 4px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #bea26c 0%, #2e5a53 100%);
+  background: linear-gradient(180deg, var(--gold) 0%, var(--accent-red) 48%, var(--primary) 100%);
 }
 
 .post-thumb {
@@ -464,16 +478,16 @@ footer {
 
 .thumb-one {
   background:
-    radial-gradient(circle at 76% 18%, rgba(255, 226, 171, 0.42) 0%, transparent 28%),
-    radial-gradient(circle at 24% 82%, rgba(177, 252, 236, 0.32) 0%, transparent 35%),
-    linear-gradient(138deg, #234a43 0%, #376d64 44%, #8da08f 100%);
+    radial-gradient(circle at 76% 18%, rgba(255, 221, 134, 0.42) 0%, transparent 30%),
+    radial-gradient(circle at 24% 82%, rgba(180, 212, 170, 0.28) 0%, transparent 35%),
+    linear-gradient(138deg, #29553e 0%, #6e4d2e 48%, #3f7157 100%);
 }
 
 .thumb-two {
   background:
-    radial-gradient(circle at 18% 16%, rgba(255, 239, 197, 0.5) 0%, transparent 30%),
-    radial-gradient(circle at 86% 85%, rgba(192, 255, 239, 0.22) 0%, transparent 34%),
-    linear-gradient(140deg, #6f5429 0%, #9b7a42 45%, #355953 100%);
+    radial-gradient(circle at 18% 16%, rgba(255, 238, 186, 0.45) 0%, transparent 30%),
+    radial-gradient(circle at 86% 85%, rgba(176, 212, 188, 0.24) 0%, transparent 34%),
+    linear-gradient(140deg, #7f462f 0%, #b7893a 45%, #2d6049 100%);
 }
 
 .post-thumb::before,
@@ -574,7 +588,9 @@ footer {
   border: 1px solid var(--line);
   border-radius: 18px;
   overflow: hidden;
-  background: linear-gradient(140deg, #fdfaf3 0%, #f3ece1 48%, #e8eee9 100%);
+  background:
+    linear-gradient(145deg, rgba(213, 171, 59, 0.12) 0%, transparent 40%),
+    linear-gradient(142deg, #fef9ef 0%, #f1e5d1 50%, #e5eddf 100%);
   box-shadow: var(--shadow-soft);
 }
 
@@ -599,8 +615,13 @@ footer {
   position: relative;
   min-height: 250px;
   background:
-    radial-gradient(circle at 18% 20%, rgba(255, 236, 191, 0.28) 0%, transparent 30%),
-    linear-gradient(150deg, #1d443d 0%, #2b5e56 52%, #3b7c70 100%);
+    repeating-linear-gradient(
+      35deg,
+      rgba(255, 255, 255, 0.06) 0 12px,
+      rgba(255, 255, 255, 0) 12px 24px
+    ),
+    radial-gradient(circle at 20% 22%, rgba(255, 224, 148, 0.28) 0%, transparent 30%),
+    linear-gradient(152deg, #2f4f36 0%, #654a2e 52%, #2d6b4e 100%);
   overflow: hidden;
 }
 
@@ -658,8 +679,8 @@ footer {
   border: 1px solid var(--line);
   border-radius: 16px;
   background:
-    linear-gradient(#fcfbf8, #fcfbf8) padding-box,
-    linear-gradient(135deg, #e8dfcf 0%, #f5f1e7 45%, #d8cec0 100%) border-box;
+    linear-gradient(#fefbf4, #fefbf4) padding-box,
+    linear-gradient(135deg, rgba(213, 171, 59, 0.45) 0%, rgba(143, 47, 47, 0.26) 52%, rgba(47, 95, 70, 0.42) 100%) border-box;
   padding: 0.95rem;
   box-shadow: 0 12px 26px rgba(20, 18, 16, 0.08);
 }
@@ -1070,7 +1091,9 @@ footer {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 1rem;
-  background: linear-gradient(135deg, #fdf8ee 0%, #ebf3ef 100%);
+  background:
+    linear-gradient(135deg, rgba(213, 171, 59, 0.1) 0%, transparent 42%),
+    linear-gradient(136deg, #fdf8ec 0%, #efe3cf 52%, #e4eddf 100%);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1111,7 +1134,7 @@ footer {
 footer {
   border-top: 1px solid var(--line);
   padding: 1rem 0 2.2rem;
-  color: #474541;
+  color: #4c4439;
 }
 
 footer p {
@@ -1277,3 +1300,11 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+
+
+
