@@ -58,6 +58,32 @@
   const lightboxImg = qs('.lightbox-image');
   const closeBtn = qs('.lightbox-close');
   const posterImages = qsa('.poster-item img');
+  const posterTrack = qs('#posterSliderTrack');
+  const posterPrev = qs('[data-poster-nav="prev"]');
+  const posterNext = qs('[data-poster-nav="next"]');
+
+  if (posterTrack && posterPrev && posterNext) {
+    const updatePosterNav = () => {
+      const maxScrollLeft = Math.max(0, posterTrack.scrollWidth - posterTrack.clientWidth);
+      posterPrev.disabled = posterTrack.scrollLeft <= 2;
+      posterNext.disabled = posterTrack.scrollLeft >= maxScrollLeft - 2;
+    };
+
+    const slideByOne = (direction) => {
+      const firstItem = qs('.poster-item', posterTrack);
+      const step = firstItem ? firstItem.getBoundingClientRect().width + 12 : 150;
+      posterTrack.scrollBy({
+        left: direction === 'next' ? step : -step,
+        behavior: 'smooth'
+      });
+    };
+
+    posterPrev.addEventListener('click', () => slideByOne('prev'));
+    posterNext.addEventListener('click', () => slideByOne('next'));
+    posterTrack.addEventListener('scroll', updatePosterNav, { passive: true });
+    window.addEventListener('resize', updatePosterNav);
+    updatePosterNav();
+  }
 
   if (lightbox && lightboxImg && closeBtn && posterImages.length) {
     const closeLightbox = () => {
