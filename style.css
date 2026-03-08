@@ -746,11 +746,11 @@ footer {
   width: 100%;
   max-width: 140px;
   margin-inline: auto;
-  border: 1px solid #cec4b4;
-  border-radius: 9px;
+  border: 1px solid #ddd4c7;
+  border-radius: 6px;
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 8px 16px rgba(20, 18, 16, 0.08);
+  background: #fffdfa;
+  box-shadow: 0 4px 10px rgba(20, 18, 16, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -758,19 +758,20 @@ footer {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   pointer-events: none;
 }
 
 .poster-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(20, 18, 16, 0.12);
+  box-shadow: 0 8px 16px rgba(20, 18, 16, 0.08);
 }
 
 .poster-item img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   background: #eee8dc;
   filter: saturate(96%) contrast(101%);
   transition: transform 0.32s ease;
@@ -778,17 +779,6 @@ footer {
 
 .poster-item:hover img {
   transform: scale(1.015);
-}
-
-.poster-item figcaption {
-  padding: 0.42rem 0.5rem;
-  font-size: 0.68rem;
-  text-align: center;
-  color: #4d4942;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-top: 1px solid #dfd6c8;
 }
 
 .lightbox {
